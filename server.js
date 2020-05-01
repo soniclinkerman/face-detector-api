@@ -8,7 +8,7 @@ const knex = require('knex');
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: 'postgresql-infinite-75989',
         user: 'sonic',
         password: '',
         database: 'face-detector'
