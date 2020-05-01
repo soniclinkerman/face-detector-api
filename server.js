@@ -35,7 +35,7 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 
 app.get("/", (req, res)=> {
-    res.send(database.users)
+    res.send("Working")
 })
 
 app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});
