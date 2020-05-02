@@ -16,7 +16,7 @@ const db = knex({
 const app = express();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 //CONTROLLERS
 const register = require('./controllers/register');
@@ -33,9 +33,8 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 
 app.get('/', (req, res)=> {res.send('It is working')})
-
-app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});
 app.post('/signin', (req,res) => {signin.handleSignIn(req,res,db,bcrypt)});
+app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});
 app.get(`/profile/:id`, (req, res) => {profile.handleProfile(req,res,db)});
 app.put('/image', (req, res) => {image.handleImage(req,res, db)});
 app.post('/imageurl', (req, res) => {image.handleAPI(req,res)});
